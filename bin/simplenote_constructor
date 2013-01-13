@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
+
+require 'optparse'
+require 'simplenote_constructor'
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: #$0 [options]"
+
+  opts.on('-d', '--directory DIRECTORY', 'Directory to convert') do |directory|
+    options[:directory] = directory
+  end
+
+  opts.on('-f', '--file FILENAME', 'File to convert') do |file|
+    options[:file] = file
+  end
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+end.parse!
+
+puts SimplenoteConstructor.execute(options)

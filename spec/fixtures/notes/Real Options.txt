@@ -1,0 +1,7 @@
+Options have value.
+
+Options expire.
+
+Never commit early unless you know why.
+
+#agile
