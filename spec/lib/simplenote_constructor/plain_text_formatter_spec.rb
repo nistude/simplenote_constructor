@@ -4,9 +4,9 @@ describe SimplenoteConstructor::PlainTextFormatter do
   describe '.format' do
     let(:note) do
       SimplenoteConstructor::LegacyNote.new(content: "foo\nbar\nbaz",
-                                 tags: ['one', 'two', 'three'],
-                                 timestamp: Time.now,
-                                 title: 'title')
+                                            tags: ['one', 'two', 'three'],
+                                            timestamp: Time.now,
+                                            title: 'title')
     end
     let(:formatted_note) { SimplenoteConstructor::PlainTextFormatter.format(note) }
 
